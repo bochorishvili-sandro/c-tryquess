@@ -1,0 +1,38 @@
+class Program
+{
+    static void Main()
+    {
+        Console.OutputEncoding = System.Text.Encoding.UTF8;
+        Random random = new Random();
+        int number = random.Next(0, 101);
+        int trys = 5;
+
+        Console.WriteLine("Try to guess the imagined number");
+        Console.WriteLine("limit 0-100");
+        Console.WriteLine("you have 5 lives");
+
+        while (trys > 0)
+        {
+            Console.Write("enter your number: ");
+            int quess = Convert.ToInt32(Console.ReadLine());
+
+            if (quess == number)
+            {
+                Console.WriteLine("you win");
+            }
+            else if (quess < number)
+            {
+                Console.WriteLine("number more then:" + quess);
+            }
+            else
+            {
+                Console.WriteLine("number less then:" + quess);
+            }
+            trys--;
+            Console.WriteLine("you have left " + trys + "try");
+
+        }
+        Console.WriteLine("game over,imagined number was" + number);
+
+    }
+}
